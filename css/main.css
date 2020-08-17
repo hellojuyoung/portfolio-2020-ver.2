@@ -1,0 +1,10 @@
+@import url("reset.css");
+
+/*fonts*/
+/* Noto Sans */
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans|Noto+Sans+KR:100,300,400,500,700,900");
+/* Spartan */
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@100;300;500;700;900&display=swap");
+
+@import url("common.css");
+@import url("content.css");

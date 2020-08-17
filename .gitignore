@@ -1,0 +1,4 @@
+#.gitignore
+#제외 파일 리스트
+published/
+.prettierrc
