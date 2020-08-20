@@ -27,22 +27,40 @@ $(document).ready(function () {
   });
 });
 
+//window resize
+$(window).resize(function () {
+  setModalContHeight();
+  setMobileIntroHeight();
+});
+
+var windowH;
 
 //nav 스크롤 이벤트
 function navOnTop() {
   $(window).scroll(function () {
     var windowTop = $(window).scrollTop();
     var introH = $(".intro").height();
+    var navH = $("#nav").height();
 
     if (windowTop >= introH) {
       $("#nav").addClass("fix");
-      $("#about").css("marginTop", 100);
+      $("#about").css("marginTop", navH + "px");
     } else {
       $("#nav").removeClass("fix");
       $("#about").css("marginTop", 0);
     }
   });
 }
+
+
+
+//prevent a href="#"
+function preventScroll() {
+  $('a[href="#"]').click(function (event) {
+    event.preventDefault();
+  });
+}
+
 
 
 //nav tab 클릭 이벤트
@@ -67,18 +85,23 @@ function scrollMenu() {
     });
   });
 
+
+
   //스크롤시 nav list에 class 추가
   $(window).on("scroll", function () {
+
+    windowH = $(window).height();
+
     var windowTop = $(window).scrollTop();
-    var windowH = $(window).height();
     var pageH = $("html, body").height();
+    var navH = $("#nav").height();
 
     var endOfScroll = pageH - windowH - 100;
 
     $.each(idContent, function (idx) {
       var target = idContent.eq(idx),
         //i = target.index(),
-        targetTop = target.offset().top - 100;
+        targetTop = target.offset().top - navH - 10;
 
       var introH = $(".intro").height();
 
@@ -152,13 +175,6 @@ function accordianList(self) {
 }
 
 
-//prevent a href="#"
-function preventScroll() {
-  $('a[href="#"]').click(function (event) {
-    event.preventDefault();
-  });
-}
-
 //modal show
 function showModal(self) {
   var finder = self;
@@ -177,10 +193,23 @@ function closeModal() {
 
 
 //modal .design-img height = window height
-function setHeight() {
-  var windowH = window.height();
+function setModalContHeight() {
+  windowH = $(window).height();
 
   $(".design-img").css("height", windowH + "px");
+}
+
+//mobile .intro height setting
+function setMobileIntroHeight() {
+  windowH = $(window).height();
+  var windowW = $(window).width();
+  var navH = $("#nav").height();
+
+  if (windowW <= 1024) {
+    $(".intro").css("height", windowH - navH + "px");
+  } else {
+    $(".intro").css("height", 850);
+  }
 }
 
 
@@ -227,5 +256,6 @@ $(document).ready(function () {
   scrollTop();
   scrollMenu();
   showUpList();
-  setHeight();
+  setModalContHeight();
+  setMobileIntroHeight();
 });

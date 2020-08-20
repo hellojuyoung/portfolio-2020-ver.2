@@ -1,7 +1,10 @@
 body {
   position: relative;
   font-family: "Spartan", "Noto Sans", sans-serif;
+  font-size: 16px;
   color: #010028;
+  overflow-x: hidden;
+  overflow-y: scroll !important;
 }
 
 
@@ -159,8 +162,6 @@ body {
 
 .intro-rolling-wrap {
   position: absolute;
-  font-size: 50px;
-  line-height: 55px;
   text-align: left;
   width: 100%;
   top: 50%;
@@ -269,7 +270,9 @@ body {
 }
 
 .navigation li a {
+  display: block;
   width: 100%;
+  height: 100%;
   font-size: 17px;
   font-weight: 500;
   color: #fff;
@@ -283,7 +286,6 @@ body {
 
 /* 컨텐츠 */
 .cont-wrap {
-  width: 100%;
   max-width: 1200px;
   margin: auto;
   padding: 80px 0 150px;
@@ -291,7 +293,6 @@ body {
 
 .cont-top {
   position: relative;
-  width: 100%;
   margin-bottom: 100px;
 }
 
@@ -335,7 +336,7 @@ button {
   opacity: 1;
 }
 
-.btn-wrap:hover .btn {
+.btn-wrap .btn {
   display: block;
   width: 100px;
   height: 50px;
@@ -495,5 +496,137 @@ button {
 
   50% {
     opacity: 0;
+  }
+}
+
+
+
+/* ~ 1239px */
+@media (max-width:1239px) {
+  .intro-rolling-wrap {
+    top: 47%;
+  }
+
+  .intro-rolling-wrap .intro-desc {
+    width: unset;
+    margin-left: 7vw;
+    font-size: 5.5rem;
+    line-height: 6.5rem;
+  }
+
+  .random-key-box {
+    position: static;
+    /*white-space: nowrap;*/
+  }
+
+  .spin-txt {
+    display: none;
+  }
+
+  .cursor-follower {
+    display: none;
+  }
+
+  .header-wrap {
+    max-width: unset;
+    padding: 20px 5%;
+  }
+
+  .navigation {
+    max-width: unset;
+  }
+
+  .navigation li a:hover {
+    color: #fff;
+  }
+
+  .navigation li.on a {
+    color: #fcdc46;
+  }
+
+  .cont-wrap {
+    max-width: unset;
+    margin: 0 5%;
+    padding: 7vw 0 10vw;
+  }
+
+  .cont-top {
+    margin-bottom: 70px;
+  }
+
+
+  .btn-wrap {
+    opacity: 1;
+  }
+
+  .btn-wrap .btn {
+    margin-top: 112px;
+  }
+
+  .btn-wrap .btn:hover {
+    border-color: inherit;
+    background-color: inherit;
+    color: inherit;
+    font-weight: 700;
+  }
+
+}
+
+/* 320px ~ 767px */
+@media (max-width:767px) and (min-width:320px) {
+  .header-wrap {
+    font-size: .8rem;
+  }
+
+  .header-wrap .production-year {
+    top: 45%;
+    left: 68%;
+  }
+
+  .intro {
+    height: 150vw;
+  }
+
+  .intro-rolling-wrap .intro-desc {
+    width: unset;
+    margin: 0 5%;
+    font-size: 2.7rem;
+    line-height: 3.3rem;
+  }
+
+  .random-key-box .keyword {
+    padding: 2vw 3vw 0;
+  }
+
+  .navigation li {
+    height: 12vw;
+    line-height: 12vw;
+  }
+
+  .navigation li a {
+    font-size: .8rem;
+  }
+
+  .navigation li:after {
+    height: 3vw;
+    margin-top: -1.5vw;
+  }
+
+  .cont-top {
+    margin-bottom: 5vw;
+  }
+
+  .cont-top .tit {
+    font-size: 3rem;
+    line-height: 3.5rem;
+  }
+
+  .content .desc {
+    font-size: .8rem;
+    line-height: 1.3rem;
+  }
+
+  .btn-wrap .btn {
+    margin-top: 20vw;
   }
 }

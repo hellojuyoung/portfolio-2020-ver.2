@@ -113,6 +113,7 @@
     top: 50%;
     font-size: 17px;
     font-weight: 700;
+    z-index: 10;
 }
 
 .cont-top .since {
@@ -201,9 +202,13 @@
 
 .publish-list .accordian .list-bar .project-name .tit {
     position: absolute;
+    width: 100%;
     font-size: 25px;
     font-weight: 500;
     top: 50%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     transform: translateY(-50%);
     cursor: pointer;
 }
@@ -376,6 +381,7 @@
     background-size: 120px 120px;
     background-position: -1px -1px;
     background-attachment: fixed;
+    overflow: hidden;
 }
 
 #design .design-list {
@@ -466,7 +472,6 @@
     z-index: 1;
     animation-fill-mode: both;
     opacity: 0.8;
-    transition:
 }
 
 .circle-obj.obj-01 {
@@ -509,13 +514,13 @@
 .circle-obj.obj-07 {
     background-color: #44ffdc;
     bottom: 50%;
-    right: 200px;
+    right: 100px;
 }
 
 .circle-obj.obj-08 {
     background-color: #fff;
     bottom: 50%;
-    right: 200px;
+    right: 100px;
     margin-bottom: 90px;
 }
 
@@ -609,6 +614,7 @@
     right: 30px;
     font-size: 17px;
     color: #fef8e8;
+    z-index: 9999;
 }
 
 .modal.design-set.on {
@@ -671,8 +677,6 @@
     box-sizing: border-box;
     overflow-y: scroll;
 }
-
-.modal-box .cont-wrap .design-img .img-wrap {}
 
 .modal-box .cont-wrap .design-img .img-wrap img {
     width: 100%;
@@ -742,4 +746,420 @@
     float: right;
     width: 350px;
     height: 250px;
+}
+
+
+
+
+
+
+/* ~ 1239px */
+@media (max-width:1239px) {
+    .modal .close {
+        font-size: 1.5rem;
+        right: 3%;
+    }
+
+    #about .cont-top {
+        margin-bottom: 70px;
+    }
+
+    .profile-photo {
+        float: unset;
+        width: 25vw;
+        height: 25vw;
+        margin: auto;
+        left: -2vw;
+    }
+
+    .profile-photo:after {
+        width: 25vw;
+        height: 25vw;
+        left: 5vw;
+    }
+
+    .introduce {
+        width: 100%;
+        text-align: center;
+    }
+
+    .ability {
+        width: 70%;
+        margin: auto;
+    }
+
+    .ability .tit {
+        text-align: center;
+    }
+
+    .ability>ul>li {
+        width: 100% !important;
+        margin-bottom: 25px;
+    }
+
+    .publish-list .accordian .list-bar .project-year {
+        width: 15%;
+        font-size: .8rem;
+        line-height: 10vw;
+    }
+
+    .publish-list .accordian .list-bar .project-name {
+        width: 60%;
+        height: 10vw;
+        font-size: .8rem;
+    }
+
+    .publish-list .accordian .list-bar .project-name .tit {
+        font-size: 1.5rem;
+    }
+
+    .publish-list .accordian .list-bar .project-tag {
+        width: 25%;
+        height: 10vw;
+    }
+
+    .publish-list .accordian .list-bar .project-tag .tag {
+        font-size: .8rem;
+        white-space: nowrap;
+    }
+
+    .publish-list .accordian .list-info {
+        margin: 0 3% 0 5%;
+    }
+
+    .publish-list .accordian .list-info.on {
+        padding: 5vw 0;
+    }
+
+    .list-info .spec-value {
+        white-space: nowrap;
+    }
+
+    .list-info .spec,
+    .list-info .desc {
+        width: 48%;
+    }
+
+    .list-info .spec {
+        margin-bottom: 3vw;
+    }
+
+    .list-info .project-img {
+        width: 48%;
+    }
+
+    .list-info .project-img .pc-img {
+        width: 90%;
+    }
+
+    .list-info .project-img .tb-img {
+        width: 30%;
+    }
+
+    .list-info .project-img .mo-img {
+        width: 15%;
+        left: 8vw;
+    }
+
+    .list-info .project-img .pc-img.no-tb-mo {
+        right: 0;
+        margin-right: 2vw;
+    }
+
+    .list-info .project-img .mo-img.no-tb {
+        left: 1vw;
+    }
+
+    .cont-top .since {
+        line-height: 1.5rem;
+    }
+
+    .cont-top .since,
+    .cont-top .go-github {
+        font-size: 1rem;
+    }
+
+    .design-list .design-grp {
+        padding-top: 40px;
+    }
+
+    .design-grp .thumb {
+        width: 25vw;
+        height: 27vw;
+    }
+
+    .design-grp .thumb .thumb-info-box {
+        display: none;
+    }
+
+    .design-info .classify {
+        font-size: 1rem;
+    }
+
+    .design-info .tit {
+        font-size: 2rem;
+        line-height: 2.5rem;
+    }
+
+    .modal-box .cont-wrap {
+        width: auto;
+        margin: 0 5%;
+    }
+
+    .modal-box .cont-wrap .design-info {
+        padding-top: 70px;
+    }
+
+    .modal-box .cont-wrap .design-img {
+        padding: 23vw 0 3vw;
+    }
+
+    .modal-box .cont-wrap .design-img .img-wrap {
+        width: 80%;
+        margin: auto;
+    }
+
+    .modal-box .cont-wrap .design-img .img-wrap figcaption {
+        font-size: 1rem;
+    }
+
+    .circle-obj.obj-06,
+    .circle-obj.obj-10,
+    .circle-obj.obj-11,
+    .circle-obj.obj-12 {
+        left: -60px;
+    }
+
+    .circle-obj.obj-07,
+    .circle-obj.obj-08 {
+        right: -60px;
+    }
+
+    .circle-obj.obj-09 {
+        left: 6%;
+    }
+
+    #contact .cont-wrap {
+        padding-bottom: 10vw;
+    }
+
+    #contact .cont-top {
+        float: unset;
+        width: unset;
+        margin-bottom: 70px;
+    }
+
+    #contact .cont-top .tit {
+        text-align: center;
+    }
+
+    #contact .content {
+        float: unset;
+        width: 100%;
+        padding: unset;
+        text-align: center;
+    }
+
+    #contact .content .contact-info {
+        float: unset;
+    }
+
+    #contact .content .residence {
+        float: unset;
+    }
+}
+
+/* 320px ~ 767px */
+@media (max-width:767px) and (min-width:320px) {
+    .cont-top {
+        margin-bottom: 10vw;
+    }
+
+    .cont-top .tit {
+        font-size: 2rem;
+    }
+
+    .cont-top .since {
+        line-height: 1.2rem;
+    }
+
+    .cont-top .since,
+    .cont-top .go-github {
+        font-size: .8rem;
+        font-weight: 500;
+    }
+
+    .cont-top .go-github {
+        width: auto;
+        height: auto;
+        line-height: 3.5rem;
+        margin-top: -1.75rem;
+        border: none;
+    }
+
+    #about .cont-top {
+        margin-bottom: 5vw;
+    }
+
+    .profile-photo {
+        width: 32vw;
+        height: 32vw;
+    }
+
+    .profile-photo:after {
+        width: 32vw;
+        height: 32vw;
+    }
+
+    .introduce {
+        margin-top: 5vw;
+    }
+
+    .introduce .desc strong {
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+
+    .introduce>.desc {
+        width: 90%;
+        margin: auto;
+    }
+
+    .ability {
+        width: 90%;
+    }
+
+    .publish-list .accordian .list-bar .project-year {
+        width: 25%;
+    }
+
+    .publish-list .accordian .list-bar .project-name {
+        width: 75%;
+        padding-left: 5px;
+    }
+
+    .publish-list .accordian .list-bar .project-name .tit {
+        font-size: .8rem;
+    }
+
+    .publish-list .accordian .list-bar .project-tag {
+        display: none;
+    }
+
+    /*.publish-list .accordian .list-bar .project-tag {
+        width: 40%;
+        padding-right: 5px;
+    }*/
+
+    /*.publish-list .accordian .list-bar .project-tag .tag {
+        height: unset;
+        font-size: .5rem;
+        padding: 1vw 2vw;
+        background-color: transparent;
+    }*/
+
+    .publish-list .accordian .list-info {
+        font-size: .8rem;
+        margin: 0 5%;
+    }
+
+    .publish-list .accordian .list-info.on {
+        height: 115vw;
+    }
+
+    .list-info .spec,
+    .list-info .desc {
+        width: 100%;
+        font-size: .8rem;
+        margin-bottom: 7vw;
+    }
+
+    .list-info .spec>ul>li {
+        height: 5vw;
+        line-height: 1rem;
+    }
+
+    .list-info .spec-value.palette .color-tip {
+        width: 15px;
+        height: 15px;
+    }
+
+    .list-info .project-img {
+        position: relative;
+        width: 90%;
+        height: 45vw;
+        margin: auto;
+    }
+
+    .list-info .project-img .pc-img {
+        bottom: 2vw;
+    }
+
+    .list-info .project-img .tb-img,
+    .list-info .project-img .mo-img {
+        bottom: 0;
+    }
+
+    .list-info .project-img .mo-img {
+        left: 21vw;
+    }
+
+    .list-info .project-img .pc-img.no-tb-mo {
+        margin-right: 3.5vw;
+    }
+
+    .list-info .project-img .mo-img.no-tb {
+        bottom: 0;
+    }
+
+    .design-list .design-grp {
+        padding-top: 0;
+    }
+
+    .design-info .tit {
+        font-size: 1.5rem;
+        line-height: 2rem;
+        margin-bottom: 10px;
+    }
+
+    .design-grp .thumb {
+        margin: 0 1vw 2vw;
+    }
+
+    .modal .close {
+        font-size: 1rem;
+        top: 5vw;
+    }
+
+    .modal-box .cont-wrap .design-info {
+        padding-top: 10vw;
+    }
+
+    .modal-box .cont-wrap .design-img {
+        padding: 35vw 0 3vw;
+    }
+
+    .modal-box .cont-wrap .design-img .img-wrap {
+        width: 100%;
+    }
+
+    .modal-box .cont-wrap .design-img .img-wrap figcaption {
+        font-size: 0.8rem;
+    }
+
+    .modal-box .cont-wrap .design-img .img-wrap figure {
+        margin-bottom: 7vw;
+    }
+
+    #contact .cont-top {
+        margin-bottom: 10vw;
+    }
+
+    #contact .content .contact-info li {
+        font-size: .8rem;
+    }
+
+    .scroll-top-wrap {
+        right: 7vw;
+    }
 }
