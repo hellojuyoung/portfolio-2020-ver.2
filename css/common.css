@@ -417,6 +417,7 @@ button {
   bottom: -100px;
   right: 50px;
   transition: all .5s;
+  z-index: 999;
 }
 
 .scroll-top-wrap * {
