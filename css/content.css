@@ -206,7 +206,7 @@
     font-size: 25px;
     font-weight: 500;
     top: 50%;
-    overflow: hidden;
+    overflow-x: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
     transform: translateY(-50%);
@@ -623,7 +623,7 @@
 
 .modal-box {
     display: none;
-    width: 100%;
+    /*width: 100%;*/
 }
 
 .modal-box.on {
