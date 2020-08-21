@@ -29,18 +29,23 @@ $(document).ready(function () {
 
 //window resize
 $(window).resize(function () {
+  scrollMenu();
   setModalContHeight();
   setMobileIntroHeight();
 });
 
+var windowTop;
 var windowH;
+var navH;
 
 //nav 스크롤 이벤트
 function navOnTop() {
   $(window).scroll(function () {
-    var windowTop = $(window).scrollTop();
+    windowTop = $(window).scrollTop();
+
     var introH = $(".intro").height();
-    var navH = $("#nav").height();
+
+    navH = $("#nav").height();
 
     if (windowTop >= introH) {
       $("#nav").addClass("fix");
@@ -65,6 +70,9 @@ function preventScroll() {
 
 //nav tab 클릭 이벤트
 function scrollMenu() {
+
+  navH = $("#nav").height();
+
   var navigator = $(".navigation li");
   var idContent = $(".scroll-cont");
   var scrollArea = $("html, body");
@@ -74,10 +82,10 @@ function scrollMenu() {
     navigator.on("click", function () {
       var thisIdx = $(this).index(),
         target = idContent.eq(thisIdx),
-        targetPosition = target.offset().top - 100;
+        targetPosition = target.offset().top - navH;
 
       scrollArea.stop().animate({
-        scrollTop: targetPosition
+        scrollTop: targetPosition + 1
       }, 500);
 
       //a href="#"
@@ -91,17 +99,15 @@ function scrollMenu() {
   $(window).on("scroll", function () {
 
     windowH = $(window).height();
+    windowTop = $(window).scrollTop();
 
-    var windowTop = $(window).scrollTop();
     var pageH = $("html, body").height();
-    var navH = $("#nav").height();
-
     var endOfScroll = pageH - windowH - 100;
 
     $.each(idContent, function (idx) {
       var target = idContent.eq(idx),
         //i = target.index(),
-        targetTop = target.offset().top - navH - 10;
+        targetTop = target.offset().top - navH;
 
       var introH = $(".intro").height();
 
@@ -129,7 +135,7 @@ function scrollMenu() {
 //scrollTop 이벤트
 function scrollTop() {
   $(window).scroll(function () {
-    var windowTop = $(window).scrollTop();
+    windowTop = $(window).scrollTop();
 
     if (windowTop >= 1000) {
       $(".scroll-top-wrap").addClass("on");
@@ -201,9 +207,10 @@ function setModalContHeight() {
 
 //mobile .intro height setting
 function setMobileIntroHeight() {
+  navH = $("#nav").height();
   windowH = $(window).height();
+
   var windowW = $(window).width();
-  var navH = $("#nav").height();
 
   if (windowW <= 1024) {
     $(".intro").css("height", windowH - navH + "px");
@@ -216,14 +223,12 @@ function setMobileIntroHeight() {
 //publish 리스트 스크롤 애니메이션
 function showUpList() {
   var delayPosition = 200;
-  var windowheight;
-
   $(window).on('resize', function () {
     insertTargetPosition();
   });
 
   $(window).on('scroll', function () {
-    var position = $(window).scrollTop() + windowheight - delayPosition;
+    var position = $(window).scrollTop() + windowH - delayPosition;
 
     $('.accordian>li').each(function () {
       if (!$(this).hasClass('on') && $(this).data('offsetTop') < position) {
@@ -235,7 +240,7 @@ function showUpList() {
 
   //target position
   function insertTargetPosition() {
-    windowheight = $(window).height();
+    windowH = $(window).height();
     $('.accordian>li').each(function () {
       $(this).data('offsetTop', ($(this).offset().top));
     });

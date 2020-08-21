@@ -1064,7 +1064,7 @@
     }
 
     .publish-list .accordian .list-info.on {
-        height: 115vw;
+        height: 140vw;
     }
 
     .list-info .spec,
@@ -1074,9 +1074,17 @@
         margin-bottom: 7vw;
     }
 
+    .list-info .desc {
+        margin-bottom: 3vw;
+    }
+
     .list-info .spec>ul>li {
         height: 5vw;
         line-height: 1rem;
+    }
+
+    .list-info .spec-tit {
+        width: 33%;
     }
 
     .list-info .spec-value.palette .color-tip {
@@ -1088,7 +1096,7 @@
         position: relative;
         width: 90%;
         height: 45vw;
-        margin: auto;
+        margin: 0 auto 20vw;
     }
 
     .list-info .project-img .pc-img {
