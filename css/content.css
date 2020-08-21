@@ -678,6 +678,18 @@
     overflow-y: scroll;
 }
 
+.design-img {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.design-img::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari, Opera*/
+}
+
 .modal-box .cont-wrap .design-img .img-wrap img {
     width: 100%;
 }
