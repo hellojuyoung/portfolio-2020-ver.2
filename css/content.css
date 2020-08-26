@@ -206,7 +206,7 @@
     font-size: 25px;
     font-weight: 500;
     top: 50%;
-    overflow-x: hidden;
+    /*overflow-x: hidden;*/
     text-overflow: ellipsis;
     white-space: nowrap;
     transform: translateY(-50%);
