@@ -206,7 +206,7 @@
     font-size: 25px;
     font-weight: 500;
     top: 50%;
-    overflow-x: hidden;
+    /*overflow-x: hidden;*/
     text-overflow: ellipsis;
     white-space: nowrap;
     transform: translateY(-50%);
@@ -475,37 +475,37 @@
 }
 
 .circle-obj.obj-01 {
-    animation: obj-01 40s infinite ease-out;
+    animation: obj-01 80s infinite ease-out;
     background-color: #ff3d87;
     top: -60px;
 }
 
 .circle-obj.obj-02 {
-    animation: obj-02 45s infinite ease-out;
+    animation: obj-02 90s infinite ease-out;
     background-color: #4fbdb7;
     top: 30%;
 }
 
 .circle-obj.obj-03 {
-    animation: obj-04 25s infinite ease-out;
+    animation: obj-04 50s infinite ease-out;
     background-color: #fcdc46;
     top: 60%;
 }
 
 .circle-obj.obj-04 {
-    animation: obj-05 40s infinite ease-out;
+    animation: obj-05 80s infinite ease-out;
     background-color: #c1ff42;
     bottom: 20%;
 }
 
 .circle-obj.obj-05 {
-    animation: obj-02 40s infinite ease-out;
+    animation: obj-02 80s infinite ease-out;
     background-color: #edbfff;
     bottom: -60px;
 }
 
 .circle-obj.obj-06 {
-    animation: obj-02 60s infinite ease-out;
+    animation: obj-02 120s infinite ease-out;
     background-color: #fadd9f;
     top: -60px;
     left: 100px;
@@ -999,8 +999,9 @@
 
     .cont-top .since,
     .cont-top .go-github {
-        font-size: .8rem;
+        font-size: .6rem;
         font-weight: 500;
+        line-height: .8rem;
     }
 
     .cont-top .go-github {

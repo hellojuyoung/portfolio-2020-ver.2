@@ -15,7 +15,7 @@ $(document).ready(function () {
   $(window).on("mousemove", followingCursor);
 
   //find clickbtn
-  var clickBtn = $('a, .publish-list .tit, button');
+  var clickBtn = $("a, .publish-list .tit, button");
 
   //click 가능한 태그에 마우스 오버시 커서 이미지 변경
   clickBtn.on("mouseover", function () {
@@ -38,6 +38,85 @@ var windowTop;
 var windowH;
 var navH;
 
+
+//keyword rolling
+function rollingKeyword() {
+  let keyBox = $(".random-key-box .keyword");
+  let keywords = ["Juyoung Shin", "Web Publisher", "Web Designer", "Cat Lover", "Hard Worker"];
+  let keywordIdx = 0;
+
+  let typingBool = false;
+  let typingIdx = 0;
+  let keyLength = keywords.length;
+
+  let typingTxt = keywords[keywordIdx];
+  typingTxt = typingTxt.split("");
+  if (typingBool == false) {
+    typingBoll = true;
+    var setType = setInterval(typing, 100);
+  }
+
+  function typing() {
+    if (typingIdx < typingTxt.length) {
+      keyBox.append(typingTxt[typingIdx]);
+      typingIdx++;
+    } else {
+      if (keywordIdx >= keyLength - 1) {
+        keywordIdx = 0;
+      } else {
+        keywordIdx++;
+      }
+
+      typingIdx = 0;
+      typingBool = false;
+      typingTxt = keywords[keywordIdx];
+
+      clearInterval(setType);
+      setTimeout(function () {
+        keyBox.html('');
+        setType = setInterval(typing, 100);
+      }, 3000);
+    }
+  }
+
+  //changeKey = setInterval(function () {
+  //  var random = Math.floor(Math.random() * keywords.length);
+  //  //keyBox.text(keywords[random]);
+
+  //  let typingBool = false;
+  //  let typingIdx = 0;
+  //  let keyBoxIdx = 0;
+
+  //  let thisKeyword = keywords[random];
+  //  let keyLength = thisKeyword.length;
+  //  thisKeyword = thisKeyword.split("");
+
+  //  if (typingBool == false) {
+  //    typingBool = true;
+  //    var typInt = setInterval(typing, 100);
+  //  }
+
+  //  function typing() {
+  //    if (typingIdx < keyLength) {
+  //      $(".keyword").append(thisKeyword[typingIdx]);
+  //      typingIdx++;
+  //    } else {
+  //      typingIdx = 0;
+  //      typingBool = false;
+  //      thisKeyword = keyBox;
+
+  //      clearInterval(typInt);
+
+  //      setTimeout(function () {
+  //        keyBox.html('');
+  //        typInt = setInterval(typing, 100);
+  //      }, 1000);
+  //    }
+  //  }
+  //}, 5000);
+}
+
+
 //nav 스크롤 이벤트
 function navOnTop() {
   $(window).scroll(function () {
@@ -57,8 +136,6 @@ function navOnTop() {
   });
 }
 
-
-
 //prevent a href="#"
 function preventScroll() {
   $('a[href="#"]').click(function (event) {
@@ -66,11 +143,8 @@ function preventScroll() {
   });
 }
 
-
-
 //nav tab 클릭 이벤트
 function scrollMenu() {
-
   navH = $("#nav").height();
 
   var navigator = $(".navigation li");
@@ -85,19 +159,18 @@ function scrollMenu() {
         targetPosition = target.offset().top - navH;
 
       scrollArea.stop().animate({
-        scrollTop: targetPosition + 1
-      }, 500);
+          scrollTop: targetPosition + 1,
+        },
+        500
+      );
 
       //a href="#"
       return false;
     });
   });
 
-
-
   //스크롤시 nav list에 class 추가
   $(window).on("scroll", function () {
-
     windowH = $(window).height();
     windowTop = $(window).scrollTop();
 
@@ -118,19 +191,15 @@ function scrollMenu() {
 
       //
       if (targetTop <= windowTop) {
-        navigator.removeClass('on');
-        navigator.eq(idx).addClass('on');
+        navigator.removeClass("on");
+        navigator.eq(idx).addClass("on");
       }
       if (!(introH <= windowTop)) {
-        navigator.removeClass('on');
+        navigator.removeClass("on");
       }
-
-    })
-
+    });
   });
 }
-
-
 
 //scrollTop 이벤트
 function scrollTop() {
@@ -142,7 +211,6 @@ function scrollTop() {
     } else {
       $(".scroll-top-wrap").removeClass("on");
     }
-
   });
 
   $(".scroll-top-wrap").on("click", function () {
@@ -156,11 +224,8 @@ function scrollTop() {
   });
 }
 
-
-
 //publish 아코디언 리스트
 function accordianList(self) {
-
   var targetList = $(self).parents(".list-bar");
   var targetDesc = targetList.siblings(".list-info");
 
@@ -180,7 +245,6 @@ function accordianList(self) {
   }
 }
 
-
 //modal show
 function showModal(self) {
   var finder = self;
@@ -190,13 +254,11 @@ function showModal(self) {
   $(".modal").find(findModalId).addClass("on");
 }
 
-
 //modal hide
 function closeModal() {
   $(".modal, .dimmed").removeClass("on");
-  $(".modal").find("on").removeClass("on");
+  $(".modal").find(".on").removeClass("on");
 }
-
 
 //modal .design-img height = window height
 function setModalContHeight() {
@@ -219,21 +281,20 @@ function setMobileIntroHeight() {
   }
 }
 
-
 //publish 리스트 스크롤 애니메이션
 function showUpList() {
   var delayPosition = 200;
-  $(window).on('resize', function () {
+  $(window).on("resize", function () {
     insertTargetPosition();
   });
 
-  $(window).on('scroll', function () {
+  $(window).on("scroll", function () {
     var position = $(window).scrollTop() + windowH - delayPosition;
 
-    $('.accordian>li').each(function () {
-      if (!$(this).hasClass('on') && $(this).data('offsetTop') < position) {
-        $(this).addClass('on');
-        $(this).removeClass('ready');
+    $(".accordian>li").each(function () {
+      if (!$(this).hasClass("on") && $(this).data("offsetTop") < position) {
+        $(this).addClass("on");
+        $(this).removeClass("ready");
       }
     });
   });
@@ -241,22 +302,17 @@ function showUpList() {
   //target position
   function insertTargetPosition() {
     windowH = $(window).height();
-    $('.accordian>li').each(function () {
-      $(this).data('offsetTop', ($(this).offset().top));
+    $(".accordian>li").each(function () {
+      $(this).data("offsetTop", $(this).offset().top);
     });
   }
 
   insertTargetPosition();
-
 }
-
-
-
-
-
 
 //run!
 $(document).ready(function () {
+  rollingKeyword();
   navOnTop();
   scrollTop();
   scrollMenu();
