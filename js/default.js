@@ -158,7 +158,12 @@ function scrollMenu() {
         target = idContent.eq(thisIdx),
         targetPosition = target.offset().top - navH;
 
+<<<<<<< HEAD
       scrollArea.stop().animate({
+=======
+      scrollArea.stop().animate(
+        {
+>>>>>>> 988490d65d934b36c76857aa49e1c232948492f9
           scrollTop: targetPosition + 1,
         },
         500
@@ -214,7 +219,8 @@ function scrollTop() {
   });
 
   $(".scroll-top-wrap").on("click", function () {
-    $("html, body").animate({
+    $("html, body").animate(
+      {
         scrollTop: 0,
       },
       500
